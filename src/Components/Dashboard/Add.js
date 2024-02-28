@@ -6,7 +6,7 @@ const Add = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data, event) => {
-    const url = `https://abccomerce.onrender.com/product`;
+    const url = `http://localhost:7000/product`;
     const formData = new FormData();
     formData.append('name', data.name);
     formData.append('price', data.price);

@@ -3,9 +3,9 @@ import { Link, useParams } from "react-router-dom";
 const View = () => {
   const { id } = useParams();
   const [products, setProducts] = useState({});
-  const imageURL = products.image ? `https://abccomerce.onrender.com/images/${products.image}` : '';
+  const imageURL = products.image ? `http://localhost:7000/images/${products.image}` : '';
   useEffect(() => {
-    const url = `https://abccomerce.onrender.com/product/${id}`;
+    const url = `http://localhost:7000/product/${id}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())

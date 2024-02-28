@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const OrderDetails = ({ order }) => {
-  const { _id, productName, price } = order;
+  const {_id, productName, userName, email, prices} = order;
+  if (!prices) {
+    return null;
+}
+   const pricesArray = Object.entries(prices);
   return (
     <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
       <th
@@ -11,7 +15,13 @@ const OrderDetails = ({ order }) => {
       >
         {productName}
       </th>
-      <td class="px-6 py-4">{price}</td>
+      <td class="px-6 py-4">
+                {pricesArray.map(([key, value]) => (
+                    <div key={key}>
+                        {key}: {value}
+                    </div>
+                ))}
+                </td>
       <td class="px-6 py-4">
         <Link to={`/bidupdate/${_id}`}>
           <button class="btn btn-xs">Update</button>

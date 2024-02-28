@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const UseItems =id => {
     const [items,setItems] = useState({})
     useEffect(()=>{
-        const url = `https://abccomerce.onrender.com/product/${id}`
+        const url = `http://localhost:7000/product/${id}`
         console.log(url)
         fetch(url)
         .then(res=> res.json())

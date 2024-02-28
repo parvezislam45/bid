@@ -17,7 +17,7 @@ const Register = () => {
               email: email,
               name: displayName
           };
-            const apiResponse = await fetch('https://abccomerce.onrender.com/user', {
+            const apiResponse = await fetch('http://localhost:7000/user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const onSubmit = async (data) => {
     name : data.name
   };
   try {
-    const apiResponse = await fetch('https://abccomerce.onrender.com/user', {
+    const apiResponse = await fetch('http://localhost:7000/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

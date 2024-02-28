@@ -10,7 +10,7 @@ const MyOrder = () => {
   console.log(orders);
 
   useEffect(() => {
-    fetch(`https://abccomerce.onrender.com/orders/user/${user.email}`)
+    fetch(`http://localhost:7000/orders/user/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user.email]);

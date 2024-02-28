@@ -15,7 +15,7 @@ const Update = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://abccomerce.onrender.com/product/${id}`);
+        const response = await axios.get(`http://localhost:7000/product/${id}`);
         const productData = response.data;
         setName(productData.name);
         setDescription(productData.description);
@@ -37,14 +37,14 @@ const Update = () => {
     if (image) formData.append('image', image);
 
     try {
-      const response = await axios.put(`https://abccomerce.onrender.com/product/${id}`, formData, {
+      const response = await axios.put(`http://localhost:7000/product/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
       console.log('Product updated successfully:', response.data);
       navigate("/all")
-      alert("Product Added SuccessFully")
+      alert("Product updated successfully")
     } catch (error) {
       console.error('Error updating product:', error);
     }

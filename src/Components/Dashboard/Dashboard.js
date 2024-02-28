@@ -8,7 +8,7 @@ const Dashboard = () => {
   const handleDelate = id =>{
     const proceed = window.confirm('Are You Sure Delate This ???')
     if(proceed){
-        const url = `https://abccomerce.onrender.com/product/${id}`
+        const url = `http://localhost:7000/product/${id}`
         fetch(url, {
             method:'DELETE'
         })

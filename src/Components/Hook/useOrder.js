@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 const useOrder =()=>{
     const [orders,setOrders] =useState([])
     useEffect(()=>{
-        fetch('https://abccomerce.onrender.com/orders')
+        fetch('http://localhost:7000/orders')
         .then(res =>res.json())
         .then(data =>setOrders(data))
     },[])

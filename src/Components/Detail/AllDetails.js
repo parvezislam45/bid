@@ -1,17 +1,32 @@
-import React from 'react';
+import React from "react";
 
-const AllDetails = ({order}) => {
-   const {productName,price} = order
-    return (
-        <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                    {productName}
-                </th>
-                <td class="px-6 py-4">
-                    {price}
-                </td>
-        </tr>
-    );
+const AllDetails = ({ order }) => {
+  const { productName, bids } = order;
+
+  return (
+    <tbody className="border-b dark:bg-gray-900 dark:border-gray-700 text-md">
+    <tr>
+        <td className="px-3 py-2">
+            <p>{productName}</p>
+        </td>
+        {bids.map((bid,index)=>(
+            <>
+            <td key={index} className="px-3 py-2">
+            <span>Name : {bid.userName}</span>
+            
+        </td>
+        <td className="px-3 py-2">
+        <span>Bid Price : {bid.price}</span>
+            
+        </td>
+            </>
+            
+        ))}
+        
+    </tr>
+</tbody>
+   
+  );
 };
 
 export default AllDetails;

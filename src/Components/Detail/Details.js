@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Details = ({ product }) => {
   const { name, price, image, _id } = product;
-  const imageURL = `https://abccomerce.onrender.com/images/${image}`;
+  const imageURL = `http://localhost:7000/images/${image}`;
   return (
     <div>
       <div className="drop-shadow-2xl ">

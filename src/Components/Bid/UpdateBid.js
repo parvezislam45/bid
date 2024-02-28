@@ -12,7 +12,7 @@ const UpdateBid = () => {
 
         try {
             const response = await axios.put(
-                `https://abccomerce.onrender.com/orders/${id}`,
+                `http://localhost:7000/orders/${id}`,
                 { price }, // Send price directly as JSON object
                 {
                     headers: {

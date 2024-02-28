@@ -16,10 +16,10 @@ const AddBid = () => {
       userName: data.userName,
       productName: items.name,
       email: data.email,
-      bid: data.price
+      price: data.price,
     };
 
-    const url = `https://abccomerce.onrender.com/orders`;
+    const url = `http://localhost:7000/orders`;
     console.log(url);
     fetch(url, {
       method: "POST",
@@ -36,6 +36,7 @@ const AddBid = () => {
         event.target.reset();
       });
   };
+
   return (
     <div>
       <div class="flex min-h-screen items-center justify-center bg-white dark:bg-gray-950 p-12">
@@ -49,7 +50,7 @@ const AddBid = () => {
                     class="w-full bg-transparent text-gray-600 dark:text-white dark:border-gray-700 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-600 invalid:border-red-500 dark:placeholder-gray-300"
                     placeholder="Your Name"
                     type="text"
-                    name="UserName"
+                    name="userName"
                     {...register("userName", {})}
                   />
                   <input
@@ -70,10 +71,12 @@ const AddBid = () => {
                     defaultValue={items.name || ""}
                     {...register("productName", {})}
                   />
+
                   <input
                     class="w-full bg-transparent text-gray-600 dark:text-white dark:border-gray-700 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-600 invalid:border-red-500 dark:placeholder-gray-300"
                     placeholder="Your Bid Amount"
                     type="text"
+                    name="price" // changed name attribute to "price"
                     {...register("price", {})}
                   />
                 </div>
